@@ -1,5 +1,5 @@
 config server 'sss0'
-        option server '167.99.201.18'
+        option server '167.99.201.17'
         option server_port '80'
         option password 'l0l99@'
         option method 'aes-128-gcm'
