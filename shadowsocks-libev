@@ -1,0 +1,26 @@
+config server 'sss0'
+        option server '167.99.201.18'
+        option server_port '80'
+        option password 'l0l99@'
+        option method 'aes-128-gcm'
+
+config ss_tunnel
+        option server 'sss0'
+        option local_port '8053'
+        option tunnel_address '8.8.8.8:53'
+        option mode 'tcp_and_udp'
+
+config ss_redir 'ssr0'
+        option disabled '0'
+        option server 'sss0'
+        option local_address '0.0.0.0'
+        option local_port '1100'
+        option mode 'tcp_and_udp'
+        option reuse_port '1'
+
+config ss_rules 'ss_rules'
+        option redir_tcp 'ssr0'
+        option redir_udp 'ssr0'
+        option src_default 'forward'
+        option dst_default 'forward'
+        option local_default 'forward'
